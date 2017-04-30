@@ -17,10 +17,12 @@ namespace JSDWebService
         public UserAuth UserAuth { get; set; }
 
         [WebMethod]
-        public string HelloWorld()
+        public List<string> HelloWorld()
         {
-            return "Hello World";
+            string query = @"select * from users";
+            return UserAuth.ExecuteQuery(query);
         }
+
 
         
         [WebMethod(Description="Mnorznie macierzy razy liczbę")]
