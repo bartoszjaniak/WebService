@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakSlowoDajeWS", "JakSlowoDajeWS\JakSlowoDajeWS.csproj", "{E792400D-D056-45E7-B18F-70688914DFED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSDWebService", "JSDWebService\JSDWebService.csproj", "{25542271-A9FB-4D1D-A5BC-26AE96AA6355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSDTestClient", "JSDTestClient\JSDTestClient.csproj", "{B46C2E59-D763-4239-908B-3F48ABF0CB4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E792400D-D056-45E7-B18F-70688914DFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E792400D-D056-45E7-B18F-70688914DFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E792400D-D056-45E7-B18F-70688914DFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E792400D-D056-45E7-B18F-70688914DFED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25542271-A9FB-4D1D-A5BC-26AE96AA6355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25542271-A9FB-4D1D-A5BC-26AE96AA6355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25542271-A9FB-4D1D-A5BC-26AE96AA6355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25542271-A9FB-4D1D-A5BC-26AE96AA6355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B46C2E59-D763-4239-908B-3F48ABF0CB4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B46C2E59-D763-4239-908B-3F48ABF0CB4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B46C2E59-D763-4239-908B-3F48ABF0CB4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B46C2E59-D763-4239-908B-3F48ABF0CB4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
