@@ -90,9 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MathService.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL.cs" />
     <Compile Include="MathService.asmx.cs">
       <DependentUpon>MathService.asmx</DependentUpon>
       <SubType>Component</SubType>

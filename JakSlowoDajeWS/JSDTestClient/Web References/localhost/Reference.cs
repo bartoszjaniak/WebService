@@ -26,10 +26,12 @@ namespace JSDTestClient.localhost {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="MathServiceSoap", Namespace="http://sosomething.pl/")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="MathServiceSoap", Namespace="http://dosomething.pl/")]
     public partial class MathService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback HelloWorldOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback LoginTestOperationCompleted;
         
         private UserAuth userAuthValueField;
         
@@ -86,13 +88,16 @@ namespace JSDTestClient.localhost {
         public event HelloWorldCompletedEventHandler HelloWorldCompleted;
         
         /// <remarks/>
+        public event LoginTestCompletedEventHandler LoginTestCompleted;
+        
+        /// <remarks/>
         public event MacierzRazyLiczbaCompletedEventHandler MacierzRazyLiczbaCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://sosomething.pl/HelloWorld", RequestNamespace="http://sosomething.pl/", ResponseNamespace="http://sosomething.pl/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string HelloWorld() {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://dosomething.pl/HelloWorld", RequestNamespace="http://dosomething.pl/", ResponseNamespace="http://dosomething.pl/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool HelloWorld() {
             object[] results = this.Invoke("HelloWorld", new object[0]);
-            return ((string)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -116,8 +121,35 @@ namespace JSDTestClient.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://dosomething.pl/LoginTest", RequestNamespace="http://dosomething.pl/", ResponseNamespace="http://dosomething.pl/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int LoginTest() {
+            object[] results = this.Invoke("LoginTest", new object[0]);
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void LoginTestAsync() {
+            this.LoginTestAsync(null);
+        }
+        
+        /// <remarks/>
+        public void LoginTestAsync(object userState) {
+            if ((this.LoginTestOperationCompleted == null)) {
+                this.LoginTestOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLoginTestOperationCompleted);
+            }
+            this.InvokeAsync("LoginTest", new object[0], this.LoginTestOperationCompleted, userState);
+        }
+        
+        private void OnLoginTestOperationCompleted(object arg) {
+            if ((this.LoginTestCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.LoginTestCompleted(this, new LoginTestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapHeaderAttribute("UserAuthValue")]
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://sosomething.pl/MacierzRazyLiczba", RequestNamespace="http://sosomething.pl/", ResponseNamespace="http://sosomething.pl/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://dosomething.pl/MacierzRazyLiczba", RequestNamespace="http://dosomething.pl/", ResponseNamespace="http://dosomething.pl/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfDouble")]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false, NestingLevel=1)]
         public double[][] MacierzRazyLiczba([System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfDouble")] [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false, NestingLevel=1)] double[][] macierz, int mnoznik) {
@@ -173,8 +205,8 @@ namespace JSDTestClient.localhost {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://sosomething.pl/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://sosomething.pl/", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://dosomething.pl/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://dosomething.pl/", IsNullable=false)]
     public partial class UserAuth : System.Web.Services.Protocols.SoapHeader {
         
         private string userNameField;
@@ -233,10 +265,36 @@ namespace JSDTestClient.localhost {
         }
         
         /// <remarks/>
-        public string Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void LoginTestCompletedEventHandler(object sender, LoginTestCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LoginTestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal LoginTestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
             }
         }
     }

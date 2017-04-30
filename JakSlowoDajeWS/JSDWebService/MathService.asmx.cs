@@ -7,7 +7,7 @@ using System.Web.Services.Protocols;
 
 namespace JSDWebService
 {
-    [WebService(Namespace = "http://sosomething.pl/")]
+    [WebService(Namespace = "http://dosomething.pl/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -17,12 +17,17 @@ namespace JSDWebService
         public UserAuth UserAuth { get; set; }
 
         [WebMethod]
-        public List<string> HelloWorld()
+        public bool HelloWorld()
         {
-            string query = @"select * from users";
-            return UserAuth.ExecuteQuery(query);
+            //return DAL.UserInvalid("Kuba112", "Tajne#haslo!");
+            return DAL.ConnectionTest();
         }
 
+        [WebMethod]
+        public int LoginTest()
+        {
+            return DAL.UserInvalid("Mis121", "KupaNaStole");
+        }
 
         
         [WebMethod(Description="Mnorznie macierzy razy liczbę")]

@@ -15,7 +15,7 @@ namespace JSDTestClient
             var macierz = new double[][] { new[] { 2.2, 3.4 }, new[] { 5.4, 6.7 } };
             int mnoznik = 2;
             var ws = new MathService();
-            ws.UserAuthValue = new UserAuth() { UserName = "Admin", Password = "123" };
+            ws.UserAuthValue = new UserAuth() { UserName = "Kuba112", Password = "Tajne#haslo!" };
             var wynik = ws.MacierzRazyLiczba(macierz, mnoznik);
             wynik.SelectMany(x => x.ToList()).ToList().ForEach(Console.WriteLine);
             Console.ReadLine();
