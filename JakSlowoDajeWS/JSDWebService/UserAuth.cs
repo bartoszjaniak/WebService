@@ -1,5 +1,4 @@
-﻿using FirebirdSql.Data.FirebirdClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,13 +14,12 @@ namespace JSDWebService
     {
         public string UserName { get; set; }
         public string Password { get; set; }
-
-        
+                
 
         public static bool AuthorizeUser(UserAuth usr)
         {
             
-            if (DAL.UserInvalid(usr.UserName, usr.Password) == 0)
+            if (usr.UserName == "")
                 return true;
             else
                 return false;

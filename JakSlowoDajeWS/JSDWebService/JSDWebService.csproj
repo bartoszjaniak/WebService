@@ -39,16 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.Firebird">
-      <HintPath>..\packages\EntityFramework.Firebird.5.8.1\lib\net40-client\EntityFramework.Firebird.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="FirebirdSql.Data.FirebirdClient">
-      <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.4.5.2.0\lib\net45\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -69,18 +63,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UserDB.xsc">
-      <DependentUpon>UserDB.xsd</DependentUpon>
-    </Content>
     <Content Include="packages.config" />
-    <None Include="UserDB.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UserDB.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="UserDB.xss">
-      <DependentUpon>UserDB.xsd</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -90,23 +73,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MathService.asmx" />
+    <Content Include="test.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL.cs" />
+    <Compile Include="DataBaseContext.cs" />
+    <Compile Include="DataBaseInitializer.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="MathService.asmx.cs">
       <DependentUpon>MathService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDB.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Question.cs" />
     <Compile Include="UserAuth.cs" />
+    <Compile Include="Models\Variant.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

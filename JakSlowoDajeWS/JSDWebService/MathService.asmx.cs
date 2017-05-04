@@ -16,17 +16,18 @@ namespace JSDWebService
     {
         public UserAuth UserAuth { get; set; }
 
-        [WebMethod]
+        [WebMethod(Description = "Test połączenia z bazą")]
         public bool HelloWorld()
         {
             //return DAL.UserInvalid("Kuba112", "Tajne#haslo!");
-            return DAL.ConnectionTest();
+            return true; //DAL.ConnectionTest();
         }
 
-        [WebMethod]
+        [WebMethod(Description="Ładuj listę pytań")]
         public int LoginTest()
         {
-            return DAL.UserInvalid("Mis121", "KupaNaStole");
+            Functions.loadQuestions();
+            return 0;//DAL.UserInvalid("Mis121", "KupaNaStole");
         }
 
         
