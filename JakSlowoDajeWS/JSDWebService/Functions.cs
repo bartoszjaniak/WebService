@@ -23,11 +23,7 @@ namespace JSDWebService
             return stringBuilder.ToString().Replace('ł', 'l').Replace('Ł', 'L');
         }
 
-      
-
-       
-
-        public static void addQestiounToBase()
+        public static void AddQestiounToBase()
         {
             List<Question> lista_pytan = new List<Question>();
             System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(lista_pytan.GetType());
@@ -51,27 +47,34 @@ namespace JSDWebService
             file.Close();
         }
 
-        public static void loadQuestions()
+        public static bool LoadQuestions()
         {
-            Console.WriteLine("Ładowanie pytań");
-            using (var db = new DataBaseContext())
+            try
             {
-                //foreach (var A in db.Question)
-                //    db.Question.Remove(A);           
-                List<Question> lista_pytan = new List<Question>();
-                System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(lista_pytan.GetType());
-                lista_pytan.Clear();
-                using (System.Xml.XmlReader reader = System.Xml.XmlReader.Create(@"C:\Users\Bartosz Janiak\Projekty\WebServiceJakSlowoDaje\JakSlowoDajeWS\JSDWebService\test.xml"))
+                using (var db = new DataBaseContext())
                 {
-                    lista_pytan = (List<Question>)x.Deserialize(reader);
-                }
-                foreach (var A in lista_pytan)
-                {
+                    //foreach (var A in db.Question)
+                    //    db.Question.Remove(A);           
+                    List<Question> lista_pytan = new List<Question>();
+                    System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(lista_pytan.GetType());
+                    lista_pytan.Clear();
+                    using (System.Xml.XmlReader reader = System.Xml.XmlReader.Create(@"C:\Users\Bartosz Janiak\Projekty\WebServiceJakSlowoDaje\JakSlowoDajeWS\JSDWebService\test.xml"))
+                    {
+                        lista_pytan = (List<Question>)x.Deserialize(reader);
+                    }
+                    foreach (var A in lista_pytan)
+                    {
 
-                    db.Question.Add(A);
-                    Console.Write(".");
+                        db.Question.Add(A);
+                        Console.Write(".");
+                    }
+                    db.SaveChanges();                    
                 }
-                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

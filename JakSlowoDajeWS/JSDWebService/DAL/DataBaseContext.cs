@@ -12,7 +12,7 @@ namespace JSDWebService
     public class DataBaseContext : DbContext
     {
         public DataBaseContext()
-            : base("MojaBazia")
+            : base("MojaBazia2")
         {
             Database.SetInitializer<DataBaseContext>(new DataBaseInitializer());
             this.Configuration.LazyLoadingEnabled = false;
@@ -21,5 +21,6 @@ namespace JSDWebService
         public DbSet<JSDWebService.Models.User> User { get; set; }
         public DbSet<Question> Question { get; set; }
         public DbSet<Answer> Answer { get; set; }
+        public DbSet<UserAccount> UserAccount { get; set; }
     }
 }

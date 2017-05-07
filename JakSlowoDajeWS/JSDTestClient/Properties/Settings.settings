@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="JSDTestClient.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="JSDTestClient_localhost_MathService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:61922/MathService.asmx</Value>
+    <Setting Name="JSDTestClient_localhost1_AdminService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61922/AdminService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

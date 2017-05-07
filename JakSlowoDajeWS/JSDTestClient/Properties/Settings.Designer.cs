@@ -26,10 +26,10 @@ namespace JSDTestClient.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61922/MathService.asmx")]
-        public string JSDTestClient_localhost_MathService {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61922/AdminService.asmx")]
+        public string JSDTestClient_localhost1_AdminService {
             get {
-                return ((string)(this["JSDTestClient_localhost_MathService"]));
+                return ((string)(this["JSDTestClient_localhost1_AdminService"]));
             }
         }
     }

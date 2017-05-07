@@ -72,25 +72,27 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MathService.asmx" />
+    <Content Include="AdminService.asmx" />
     <Content Include="test.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseContext.cs" />
-    <Compile Include="DataBaseInitializer.cs" />
+    <Compile Include="DAL\DataBaseContext.cs" />
+    <Compile Include="DAL\DataBaseInitializer.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Models\Answer.cs" />
-    <Compile Include="MathService.asmx.cs">
-      <DependentUpon>MathService.asmx</DependentUpon>
+    <Compile Include="AdminService.asmx.cs">
+      <DependentUpon>AdminService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\Sesion.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Question.cs" />
-    <Compile Include="UserAuth.cs" />
+    <Compile Include="UserFunctions.cs" />
     <Compile Include="Models\Variant.cs" />
   </ItemGroup>
   <PropertyGroup>
